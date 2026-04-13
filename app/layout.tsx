@@ -48,10 +48,16 @@ export default function RootLayout({
         {/* カテゴリーバー */}
         <div className="bg-white border-b border-gray-200">
           <div className="max-w-6xl mx-auto px-4 h-10 flex items-center gap-6 text-sm overflow-x-auto">
-            {['OpenAI', 'Google AI', 'Hugging Face', 'TechCrunch AI', 'VentureBeat AI'].map(cat => (
-              <span key={cat} className="text-gray-600 hover:text-[#3BB8D4] cursor-pointer whitespace-nowrap transition-colors">
-                {cat}
-              </span>
+            {[
+              { name: 'OpenAI', slug: 'openai' },
+              { name: 'Google AI', slug: 'google-ai' },
+              { name: 'Hugging Face', slug: 'hugging-face' },
+              { name: 'TechCrunch AI', slug: 'techcrunch-ai' },
+              { name: 'VentureBeat AI', slug: 'venturebeat-ai' },
+            ].map(cat => (
+              <Link key={cat.slug} href={`/category/${cat.slug}`} className="text-gray-600 hover:text-[#3BB8D4] whitespace-nowrap transition-colors">
+                {cat.name}
+              </Link>
             ))}
           </div>
         </div>
