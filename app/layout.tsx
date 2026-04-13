@@ -2,9 +2,25 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 
+const BASE_URL = 'https://ai-blog-next-eight.vercel.app'
+
 export const metadata: Metadata = {
   title: "AIニュース最前線 | 最新AI情報まとめ",
   description: "OpenAI・Google・Anthropicなど最新のAIツール・機能情報を毎日お届けするブログ",
+  metadataBase: new URL(BASE_URL),
+  openGraph: {
+    title: "AIニュース最前線 | 最新AI情報まとめ",
+    description: "OpenAI・Google・Anthropicなど最新のAIツール・機能情報を毎日お届けするブログ",
+    url: BASE_URL,
+    siteName: "AIニュース最前線",
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AIニュース最前線",
+    description: "OpenAI・Google・Anthropicなど最新のAIツール・機能情報を毎日お届けするブログ",
+  },
 };
 
 export default function RootLayout({
@@ -23,6 +39,7 @@ export default function RootLayout({
             </Link>
             <nav className="flex items-center gap-6 text-sm">
               <Link href="/" className="hover:text-[#3BB8D4] transition-colors">ニュース</Link>
+              <Link href="/about" className="hover:text-[#3BB8D4] transition-colors">サイトについて</Link>
               <Link href="/contact" className="hover:text-[#3BB8D4] transition-colors">お問い合わせ</Link>
             </nav>
           </div>

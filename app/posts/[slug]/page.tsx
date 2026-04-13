@@ -13,7 +13,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) return {}
-  return { title: `${post.title} | AIニュース最前線` }
+  const description = post.content.replace(/<[^>]+>/g, '').slice(0, 120)
+  return {
+    title: `${post.title} | AIニュース最前線`,
+    description,
+    openGraph: {
+      title: post.title,
+      description,
+      type: 'article',
+      publishedTime: post.publishedAt,
+      tags: post.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description,
+    },
+  }
 }
 
 export default async function PostPage({ params }: Props) {

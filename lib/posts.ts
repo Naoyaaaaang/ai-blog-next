@@ -12,16 +12,40 @@ export type Post = {
 }
 
 const POSTS_DIR = path.join(process.cwd(), 'posts')
+export const POSTS_PER_PAGE = 9
+
+export const SOURCE_SLUGS: Record<string, string> = {
+  'OpenAI': 'openai',
+  'Google AI': 'google-ai',
+  'Hugging Face': 'hugging-face',
+  'TechCrunch AI': 'techcrunch-ai',
+  'VentureBeat AI': 'venturebeat-ai',
+}
+
+export const SLUG_TO_SOURCE: Record<string, string> = Object.fromEntries(
+  Object.entries(SOURCE_SLUGS).map(([k, v]) => [v, k])
+)
 
 export function getAllPosts(): Post[] {
   if (!fs.existsSync(POSTS_DIR)) return []
   const files = fs.readdirSync(POSTS_DIR)
     .filter(f => f.endsWith('.json'))
-    .sort((a, b) => b.localeCompare(a)) // 新しい順
+    .sort((a, b) => b.localeCompare(a))
   return files.map(f => {
     const raw = fs.readFileSync(path.join(POSTS_DIR, f), 'utf-8')
     return JSON.parse(raw) as Post
   })
+}
+
+export function getPostsByPage(page: number): { posts: Post[]; totalPages: number } {
+  const all = getAllPosts()
+  const totalPages = Math.max(1, Math.ceil(all.length / POSTS_PER_PAGE))
+  const posts = all.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE)
+  return { posts, totalPages }
+}
+
+export function getPostsBySource(source: string): Post[] {
+  return getAllPosts().filter(p => p.source === source)
 }
 
 export function getPostBySlug(slug: string): Post | null {
