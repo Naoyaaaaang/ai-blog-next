@@ -23,7 +23,7 @@ export default function RootLayout({
             </Link>
             <nav className="flex items-center gap-6 text-sm">
               <Link href="/" className="hover:text-[#3BB8D4] transition-colors">ニュース</Link>
-              <Link href="/about" className="hover:text-[#3BB8D4] transition-colors">このサイトについて</Link>
+              <Link href="/contact" className="hover:text-[#3BB8D4] transition-colors">お問い合わせ</Link>
             </nav>
           </div>
         </header>
@@ -53,7 +53,7 @@ export default function RootLayout({
                 <p className="text-sm text-gray-400">OpenAI・Google・Anthropicなど最新のAI情報を毎日お届け</p>
               </div>
               <div className="flex gap-6 text-sm text-gray-400">
-                <Link href="/about" className="hover:text-white transition-colors">このサイトについて</Link>
+                <Link href="/contact" className="hover:text-white transition-colors">お問い合わせ</Link>
                 <Link href="/privacy" className="hover:text-white transition-colors">プライバシーポリシー</Link>
               </div>
             </div>
