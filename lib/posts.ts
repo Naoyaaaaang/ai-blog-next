@@ -5,6 +5,7 @@ export type Post = {
   slug: string
   title: string
   content: string
+  imageUrl: string | null
   source: string
   sourceUrl: string
   publishedAt: string

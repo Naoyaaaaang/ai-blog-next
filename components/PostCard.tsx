@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Post } from '@/lib/posts'
 
 const SOURCE_COLORS: Record<string, string> = {
@@ -20,12 +21,27 @@ const SOURCE_BG: Record<string, string> = {
 export function PostCard({ post, large = false }: { post: Post; large?: boolean }) {
   const bg = SOURCE_BG[post.source] ?? 'from-gray-600 to-gray-800'
   const dot = SOURCE_COLORS[post.source] ?? 'bg-gray-500'
+  const imgHeight = large ? 'h-48' : 'h-36'
 
   return (
     <Link href={`/posts/${post.slug}`} className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-      <div className={`bg-gradient-to-br ${bg} ${large ? 'h-48' : 'h-36'} flex items-end p-3`}>
-        <span className="text-white text-xs font-bold opacity-70 uppercase tracking-wider">{post.source}</span>
+      {/* サムネイル */}
+      <div className={`relative ${imgHeight} overflow-hidden`}>
+        {post.imageUrl ? (
+          <Image
+            src={post.imageUrl}
+            alt={post.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            unoptimized
+          />
+        ) : (
+          <div className={`w-full h-full bg-gradient-to-br ${bg} flex items-end p-3`}>
+            <span className="text-white text-xs font-bold opacity-70 uppercase tracking-wider">{post.source}</span>
+          </div>
+        )}
       </div>
+
       <div className="p-4">
         <div className="flex items-center gap-2 mb-2">
           <span className={`inline-block w-2 h-2 rounded-full ${dot}`}></span>
