@@ -22,39 +22,81 @@ export default async function PostPage({ params }: Props) {
   if (!post) notFound()
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-10">
-      <div className="mb-6">
-        <div className="flex items-center gap-2 mb-4">
-          <span className="text-xs bg-blue-50 text-blue-600 border border-blue-100 px-2 py-0.5 rounded">
-            {post.source}
-          </span>
-          <time className="text-xs text-gray-400">
-            {new Date(post.publishedAt).toLocaleDateString('ja-JP')}
-          </time>
-        </div>
-        <h1 className="text-2xl font-bold text-gray-900 leading-snug mb-4">
-          {post.title}
-        </h1>
-        {post.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mb-6">
-            {post.tags.map(tag => (
-              <span key={tag} className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
-                #{tag}
-              </span>
-            ))}
+    <main className="max-w-6xl mx-auto px-4 py-8">
+      <div className="flex gap-8">
+        {/* メインコンテンツ */}
+        <article className="flex-1 min-w-0">
+          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+            {/* ヘッダー画像エリア */}
+            <div className="bg-gradient-to-br from-[#253947] to-[#1a2a35] h-32 flex items-end p-6">
+              <div className="flex flex-wrap gap-2">
+                {post!.tags.map(tag => (
+                  <span key={tag} className="text-xs bg-white/20 text-white px-2 py-0.5 rounded">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-6 md:p-8">
+              {/* メタ情報 */}
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-xs bg-[#3BB8D4]/10 text-[#3BB8D4] border border-[#3BB8D4]/20 px-3 py-1 rounded-full font-medium">
+                  {post!.source}
+                </span>
+                <time className="text-xs text-gray-400">
+                  {new Date(post!.publishedAt).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </div>
+
+              {/* タイトル */}
+              <h1 className="text-2xl font-bold text-gray-900 leading-snug mb-6">
+                {post!.title}
+              </h1>
+
+              {/* 本文 */}
+              <div
+                className="prose prose-gray max-w-none text-sm leading-relaxed
+                  [&_h2]:text-lg [&_h2]:font-bold [&_h2]:text-gray-800 [&_h2]:mt-8 [&_h2]:mb-3
+                  [&_h2]:border-l-4 [&_h2]:border-[#3BB8D4] [&_h2]:pl-3
+                  [&_p]:text-gray-700 [&_p]:mb-4 [&_p]:leading-relaxed
+                  [&_a]:text-[#3BB8D4] [&_a]:underline"
+                dangerouslySetInnerHTML={{ __html: post!.content }}
+              />
+            </div>
           </div>
-        )}
-      </div>
 
-      <div
-        className="prose prose-gray max-w-none text-sm leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+          <div className="mt-6">
+            <Link href="/" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#3BB8D4] transition-colors">
+              ← 記事一覧に戻る
+            </Link>
+          </div>
+        </article>
 
-      <div className="mt-10 pt-6 border-t border-gray-100">
-        <Link href="/" className="text-sm text-gray-400 hover:text-gray-600 transition-colors">
-          ← 記事一覧に戻る
-        </Link>
+        {/* サイドバー */}
+        <aside className="w-64 shrink-0 hidden lg:block">
+          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div className="bg-[#253947] text-white px-4 py-3">
+              <h3 className="text-sm font-bold">新着記事</h3>
+            </div>
+            <div className="divide-y divide-gray-100">
+              {getAllPosts().slice(0, 6).map(p => (
+                <Link
+                  key={p.slug}
+                  href={`/posts/${p.slug}`}
+                  className={`block p-3 hover:bg-gray-50 transition-colors group ${p.slug === slug ? 'bg-blue-50' : ''}`}
+                >
+                  <p className="text-xs text-gray-700 group-hover:text-[#3BB8D4] transition-colors leading-snug line-clamp-2 mb-1">
+                    {p.title}
+                  </p>
+                  <time className="text-xs text-gray-400">
+                    {new Date(p.publishedAt).toLocaleDateString('ja-JP')}
+                  </time>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </aside>
       </div>
     </main>
   )
