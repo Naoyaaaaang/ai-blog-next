@@ -79,7 +79,8 @@ URL: ${item.link}
     }),
   ])
 
-  const content = contentMsg.content[0].type === 'text' ? contentMsg.content[0].text : ''
+  const rawContent = contentMsg.content[0].type === 'text' ? contentMsg.content[0].text : ''
+  const content = rawContent.replace(/^```[\w]*\n?/m, '').replace(/```\s*$/m, '').trim()
   const title = titleMsg.content[0].type === 'text' ? titleMsg.content[0].text.trim() : item.title
 
   return { title, content }
