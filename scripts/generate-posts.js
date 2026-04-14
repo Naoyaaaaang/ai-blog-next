@@ -163,4 +163,4 @@ async function main() {
   console.log('\n🎉 完了！')
 }
 
-main().catch(console.error)
+main().then(() => process.exit(0)).catch(e => { console.error(e); process.exit(1) })
