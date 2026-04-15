@@ -1,0 +1,14 @@
+{
+  "slug": "20260415-1776225454525",
+  "title": "Chrome の AI が仕事を変える：お気に入りの作業を自動保存",
+  "content": "<h1>GoogleがChromeに「スキルズ」機能を追加、AIワークフローの保存と再利用が可能に</h1>\n\n<h2>ChromeにAIスキルズ機能が登場</h2>\n\n<p>Googleは、ブラウザChrome用の新機能「スキルズ」を追加しました。この機能により、ユーザーはお気に入りのAIプロンプト（指示文）をウェブサイト全体で保存し、再利用できるようになります。スキルズ機能はGeminiのブラウザ統合に基づいて構築されており、Googleが進めるブラウザ内AI体験の拡張の一環です。</p>\n\n<p>これまで、AIを使用する際には毎回同じプロンプトを入力する必要がありました。例えば、メールを簡潔にまとめたい、文章を修正してほしい、データを特定の形式に変換してほしい、といった繰り返しのタスクには手間がかかっていました。スキルズ機能は、このような日常的なAI操作を効率化することを目指しています。</p>\n\n<h2>ワークフロー自動化でユーザーの生産性向上</h2>\n\n<p>スキルズの概念は単純ながら強力です。ユーザーが一度AIプロンプトを設定して保存すれば、その後はワンクリックで同じプロンプトを任意のウェブサイトで実行できます。例えば、「このテキストを箇条書きにする」というスキルを作成すれば、Gmail、Google Docs、Notionなど、あらゆるウェブサイトで活用可能です。</p>\n\n<p>この機能は、知識労働者の生産性向上を大きく支援します。繰り返し作業を自動化することで、ユーザーはより創造的で戦略的なタスクに時間を割くことができるようになります。また、スキルズは個人の作業スタイルに合わせてカスタマイズでき、チームで共有することもできるなど、柔軟性も備えています。</p>\n\n<h2>GeminiとChromeの連携がもたらす未来</h2>\n\n<p>スキルズ機能はGemini（GoogleのAIアシスタント）がChrome内で実装されていることを活かした施策です。ブラウザレベルでAI機能を提供することで、ユーザーはわざわざ別のアプリケーションに切り替える必要がなく、シームレスにAIの力を活用できます。</p>\n\n<p>Googleはこれまでも、Chrome内にGeminiの回答機能やテキスト生成機能を統合してきました。スキルズはそうした取り組みの延長線上にあり、ブラウザがAIアシスタントとしてより高度な役割を担う方向性を示しています。今後も同様の機能拡張が期待されます。</p>\n\n<p><strong>参照元:</strong> <a href=\"https://techcrunch.com/2026/04/14/google-adds-ai-skills-to-chrome-to-help-you-save-favorite-workflows/\" target=\"_blank\">TechCrunch - Google adds AI Skills to Chrome to help you save favorite workflows</a></p>",
+  "imageUrl": null,
+  "source": "TechCrunch AI",
+  "sourceUrl": "https://techcrunch.com/2026/04/14/google-adds-ai-skills-to-chrome-to-help-you-save-favorite-workflows/",
+  "publishedAt": "2026-04-15T03:57:34.525Z",
+  "tags": [
+    "AI",
+    "テクノロジー",
+    "TechCrunch AI"
+  ]
+}
