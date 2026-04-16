@@ -35,69 +35,113 @@ body {
   overflow: hidden;
 }
 
-/* ========== Per-site card styles ========== */
+/* ========== ニューステッカー ========== */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.news-ticker {
+  animation: ticker-scroll 28s linear infinite;
+  display: inline-block;
+}
 
-/* ai-news: left accent border */
+/* ========== ai-image: マソンリーグリッド ========== */
+.posts-masonry {
+  columns: 3;
+  column-gap: 1rem;
+}
+.posts-masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* ========== ai-news: 速報スタイル ========== */
+.site-ai-news body {
+  font-family: "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
 .site-ai-news .post-card {
   border-left: 3px solid var(--accent);
-  transition: box-shadow 0.2s, border-color 0.2s;
+  border-radius: 2px;
 }
 .site-ai-news .post-card:hover {
-  box-shadow: 0 4px 20px rgba(0, 98, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 98, 255, 0.12);
 }
 
-/* crypto-news: neon glow border */
+/* ========== crypto-news: サイバーパンク ========== */
+.site-crypto-news body {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,0.015) 2px,
+    rgba(255,255,255,0.015) 4px
+  );
+}
 .site-crypto-news .post-card {
   border: 1px solid rgba(255, 107, 0, 0.3);
+  border-radius: 4px;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .site-crypto-news .post-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 0 20px rgba(255, 107, 0, 0.35);
+  box-shadow: 0 0 22px rgba(255, 107, 0, 0.4), inset 0 0 40px rgba(255, 107, 0, 0.04);
 }
 .site-crypto-news .sidebar-widget {
   border: 1px solid rgba(255, 107, 0, 0.2);
 }
 .site-crypto-news .hover-item:hover {
-  background-color: rgba(255, 107, 0, 0.08) !important;
+  background-color: rgba(255, 107, 0, 0.06) !important;
 }
 
-/* nisa-blog: gold top border + warm shadow */
+/* ========== nisa-blog: マガジン調 ========== */
 .site-nisa-blog .post-card {
   border-top: 3px solid var(--accent);
-  transition: box-shadow 0.2s;
+  border-radius: 12px;
 }
 .site-nisa-blog .post-card:hover {
-  box-shadow: 0 6px 24px rgba(184, 134, 11, 0.2);
+  box-shadow: 0 8px 28px rgba(184, 134, 11, 0.2);
+}
+.site-nisa-blog .hover-item:hover {
+  background-color: #FBF3E0 !important;
 }
 
-/* ai-image: magenta glow */
+/* ========== ai-image: ギャラリー ========== */
+.site-ai-image body {
+  background-image: radial-gradient(ellipse at 20% 50%, rgba(255,0,170,0.08) 0%, transparent 60%),
+                    radial-gradient(ellipse at 80% 20%, rgba(0,200,255,0.06) 0%, transparent 60%);
+}
 .site-ai-image .post-card {
   border: 1px solid rgba(255, 0, 170, 0.2);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.3s, transform 0.2s;
 }
 .site-ai-image .post-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 0 28px rgba(255, 0, 170, 0.45);
+  box-shadow: 0 0 30px rgba(255, 0, 170, 0.5);
+  transform: translateY(-2px);
 }
 .site-ai-image .sidebar-widget {
   border: 1px solid rgba(255, 0, 170, 0.2);
 }
 .site-ai-image .hover-item:hover {
-  background-color: rgba(255, 0, 170, 0.08) !important;
+  background-color: rgba(255, 0, 170, 0.07) !important;
 }
 
-/* overseas-tools: coral top border */
+/* ========== overseas-tools: ProductHunt風 ========== */
 .site-overseas-tools .post-card {
   border-top: 4px solid var(--accent);
+  border-radius: 10px;
   transition: box-shadow 0.2s, transform 0.15s;
 }
 .site-overseas-tools .post-card:hover {
   box-shadow: 0 8px 28px rgba(230, 57, 70, 0.18);
   transform: translateY(-2px);
 }
+.site-overseas-tools .hover-item:hover {
+  background-color: #FFEEEF !important;
+}
 
-/* ========== Article body prose ========== */
+/* ========== 記事本文 ========== */
 .article-body h2 {
   font-size: 1.125rem;
   font-weight: 700;
