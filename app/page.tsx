@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getPostsByPage, SOURCE_SLUGS } from '@/lib/posts'
+import { siteConfig } from '@/lib/site-config'
 import { PostCard } from '@/components/PostCard'
 
 export default function HomePage() {
@@ -11,7 +12,7 @@ export default function HomePage() {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-1 h-6 bg-[#3BB8D4] rounded"></div>
-            <h2 className="text-lg font-bold text-gray-800">最新AIニュース</h2>
+            <h2 className="text-lg font-bold text-gray-800">{siteConfig.categoryLabel}</h2>
           </div>
 
           {posts.length === 0 ? (

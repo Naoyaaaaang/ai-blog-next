@@ -4,6 +4,15 @@ const Anthropic = require('@anthropic-ai/sdk')
 const Parser = require('rss-parser')
 const fs = require('fs')
 const path = require('path')
+const siteConfigs = require('./site-configs')
+
+const SITE_ID = process.env.SITE_ID || 'ai-news'
+const siteConfig = siteConfigs[SITE_ID]
+if (!siteConfig) {
+  console.error(`❌ Unknown SITE_ID: "${SITE_ID}". Available: ${Object.keys(siteConfigs).join(', ')}`)
+  process.exit(1)
+}
+console.log(`📌 サイト: ${SITE_ID}`)
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 const parser = new Parser({
@@ -19,13 +28,7 @@ const parser = new Parser({
 const ARTICLES_PER_RUN = 3
 const POSTS_DIR = path.join(__dirname, '..', 'posts')
 
-const RSS_SOURCES = [
-  { url: 'https://openai.com/blog/rss.xml', name: 'OpenAI' },
-  { url: 'https://blog.google/technology/ai/rss/', name: 'Google AI' },
-  { url: 'https://huggingface.co/blog/feed.xml', name: 'Hugging Face' },
-  { url: 'https://techcrunch.com/category/artificial-intelligence/feed/', name: 'TechCrunch AI' },
-  { url: 'https://venturebeat.com/category/ai/feed/', name: 'VentureBeat AI' },
-]
+const RSS_SOURCES = siteConfig.rssSources
 
 function slugify(text) {
   const now = new Date()
@@ -90,26 +93,7 @@ async function generateArticle(item) {
       max_tokens: 1500,
       messages: [{
         role: 'user',
-        content: `以下の海外AIニュースをもとに、日本語のブログ記事をHTMLで書いてください。
-
-ソース: ${item.source}
-タイトル: ${item.title}
-概要: ${item.summary}
-URL: ${item.link}
-
-条件:
-- h2タグで見出し（2〜3個）
-- pタグで本文
-- 最後に参照元リンク
-- 600〜800字
-- HTMLタグのみ出力（\`\`\`やhtml宣言・bodyタグ不要）
-
-文体・トーン:
-- AI好きな人が友達に話しかけるような、ゆるくて親しみやすい口調
-- 「〜ですね」「〜らしいですよ」「これ、けっこうすごくないですか？」みたいな自然な語り口
-- 難しい専門用語は出てきたら「要するに〜ってこと」とさらっと補足
-- 驚きや感想をちょこちょこ挟む（「正直びっくりしました」「個人的にはここが熱い」など）
-- お堅いニュース記事や教科書っぽい文体はNG、でも雑すぎるのもNG`,
+        content: siteConfig.contentPrompt(item),
       }],
     }),
     anthropic.messages.create({
@@ -117,7 +101,7 @@ URL: ${item.link}
       max_tokens: 100,
       messages: [{
         role: 'user',
-        content: `以下を日本語のブログタイトルに変換してください。30文字以内、タイトルのみ出力。\n「すごい」「ヤバい」「話題」みたいなちょっと気になるキャッチーな言い回しにしてください。煽りすぎは不要、でも読みたくなるくらいの引きは欲しいです。\n\n${item.title}`,
+        content: siteConfig.titlePrompt(item.title),
       }],
     }),
   ])
@@ -151,7 +135,7 @@ async function main() {
         source: item.source,
         sourceUrl: item.link,
         publishedAt: new Date().toISOString(),
-        tags: ['AI', 'テクノロジー', item.source],
+        tags: siteConfig.tags(item.source),
       }
 
       fs.writeFileSync(

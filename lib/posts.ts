@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { SOURCE_SLUGS, SLUG_TO_SOURCE } from './site-config'
 
 export type Post = {
   slug: string
@@ -15,17 +16,7 @@ export type Post = {
 const POSTS_DIR = path.join(process.cwd(), 'posts')
 export const POSTS_PER_PAGE = 9
 
-export const SOURCE_SLUGS: Record<string, string> = {
-  'OpenAI': 'openai',
-  'Google AI': 'google-ai',
-  'Hugging Face': 'hugging-face',
-  'TechCrunch AI': 'techcrunch-ai',
-  'VentureBeat AI': 'venturebeat-ai',
-}
-
-export const SLUG_TO_SOURCE: Record<string, string> = Object.fromEntries(
-  Object.entries(SOURCE_SLUGS).map(([k, v]) => [v, k])
-)
+export { SOURCE_SLUGS, SLUG_TO_SOURCE }
 
 export function getAllPosts(): Post[] {
   if (!fs.existsSync(POSTS_DIR)) return []
