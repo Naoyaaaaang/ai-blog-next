@@ -1,16 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { siteConfig } from '@/lib/site-config'
 
 export const metadata: Metadata = {
-  title: 'お問い合わせ | AIニュース最前線',
+  title: `お問い合わせ | ${siteConfig.siteName}`,
 }
 
 export default function ContactPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-10">
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">お問い合わせ</h1>
-        <p className="text-sm text-gray-500 mb-8">ご質問・ご意見・掲載内容に関するご指摘などはこちらからお送りください。</p>
+      <div className="rounded-lg shadow-sm p-8" style={{ backgroundColor: 'var(--card-bg)' }}>
+        <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>お問い合わせ</h1>
+        <p className="text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>ご質問・ご意見・掲載内容に関するご指摘などはこちらからお送りください。</p>
 
         <form
           action="https://formspree.io/f/YOUR_FORM_ID"
@@ -18,7 +19,7 @@ export default function ContactPage() {
           className="space-y-6"
         >
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="name">
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-primary)' }} htmlFor="name">
               お名前 <span className="text-red-400">*</span>
             </label>
             <input
@@ -26,13 +27,14 @@ export default function ContactPage() {
               type="text"
               name="name"
               required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#3BB8D4] focus:ring-1 focus:ring-[#3BB8D4] transition"
+              className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none transition"
+              style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg)', color: 'var(--text-primary)' }}
               placeholder="山田 太郎"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="email">
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-primary)' }} htmlFor="email">
               メールアドレス <span className="text-red-400">*</span>
             </label>
             <input
@@ -40,26 +42,28 @@ export default function ContactPage() {
               type="email"
               name="email"
               required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#3BB8D4] focus:ring-1 focus:ring-[#3BB8D4] transition"
+              className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none transition"
+              style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg)', color: 'var(--text-primary)' }}
               placeholder="example@email.com"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="subject">
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-primary)' }} htmlFor="subject">
               件名
             </label>
             <input
               id="subject"
               type="text"
               name="subject"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#3BB8D4] focus:ring-1 focus:ring-[#3BB8D4] transition"
+              className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none transition"
+              style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg)', color: 'var(--text-primary)' }}
               placeholder="お問い合わせの件名"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="message">
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-primary)' }} htmlFor="message">
               メッセージ <span className="text-red-400">*</span>
             </label>
             <textarea
@@ -67,21 +71,25 @@ export default function ContactPage() {
               name="message"
               required
               rows={6}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#3BB8D4] focus:ring-1 focus:ring-[#3BB8D4] transition resize-none"
+              className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none transition resize-none"
+              style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg)', color: 'var(--text-primary)' }}
               placeholder="お問い合わせ内容をご記入ください"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-[#3BB8D4] hover:bg-[#2da5bf] text-white font-medium py-3 rounded-lg text-sm transition-colors"
+            className="w-full text-white font-medium py-3 rounded-lg text-sm transition-opacity hover:opacity-80"
+            style={{ backgroundColor: 'var(--accent)' }}
           >
             送信する
           </button>
         </form>
 
         <div className="mt-8">
-          <Link href="/" className="text-sm text-gray-400 hover:text-[#3BB8D4] transition-colors">← トップに戻る</Link>
+          <Link href="/" className="text-sm transition-opacity hover:opacity-60" style={{ color: 'var(--text-secondary)' }}>
+            ← トップに戻る
+          </Link>
         </div>
       </div>
     </main>
