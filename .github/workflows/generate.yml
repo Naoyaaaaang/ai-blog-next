@@ -1,4 +1,4 @@
-name: Generate AI Blog Posts
+name: Generate Blog Posts & Deploy
 
 on:
   schedule:
@@ -27,6 +27,7 @@ jobs:
       - name: Generate posts
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SITE_ID: ${{ secrets.SITE_ID }}
         run: node scripts/generate-posts.js
 
       - name: Commit and push
@@ -34,3 +35,10 @@ jobs:
         with:
           commit_message: "feat: AI記事自動生成"
           file_pattern: "posts/*.json"
+
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: npx vercel deploy --prod --token=$VERCEL_TOKEN --yes
