@@ -22,37 +22,54 @@ export const metadata: Metadata = {
   },
 };
 
+const cssVars = {
+  '--accent': siteConfig.accentColor,
+  '--accent-hover': siteConfig.accentHover,
+  '--header-bg': siteConfig.headerBg,
+  '--bg': siteConfig.bgColor,
+  '--card-bg': siteConfig.cardBg,
+  '--text-primary': siteConfig.textPrimary,
+  '--text-secondary': siteConfig.textSecondary,
+  '--border': siteConfig.borderColor,
+  '--tag-bg': siteConfig.tagBg,
+  '--tag-text': siteConfig.tagText,
+  '--cat-bar-bg': siteConfig.categoryBarBg,
+  '--sidebar-header-bg': siteConfig.sidebarHeaderBg,
+} as React.CSSProperties
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className="h-full">
-      <body className="min-h-full flex flex-col bg-[#f4f6f8] text-gray-900 antialiased">
+    <html lang="ja" className={`h-full site-${siteConfig.siteId}`} style={cssVars}>
+      <body className="min-h-full flex flex-col antialiased" style={{ backgroundColor: 'var(--bg)', color: 'var(--text-primary)' }}>
+
         {/* ヘッダー */}
-        <header className="text-white sticky top-0 z-50" style={{ backgroundColor: siteConfig.headerBg }}>
+        <header className="text-white sticky top-0 z-50" style={{ backgroundColor: 'var(--header-bg)' }}>
           <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-            <Link href="/" className="font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">
-              <span style={{ color: siteConfig.accentColor }}>{siteConfig.siteNamePrefix}</span>
-              {siteConfig.siteNameSuffix}
+            <Link href="/" className="font-bold text-xl tracking-tight hover:opacity-80 transition-opacity flex items-center gap-1">
+              <span style={{ color: 'var(--accent)' }}>{siteConfig.siteNamePrefix}</span>
+              <span className="text-white">{siteConfig.siteNameSuffix}</span>
             </Link>
-            <nav className="flex items-center gap-6 text-sm">
-              <Link href="/" className="hover:opacity-80 transition-opacity">ニュース</Link>
-              <Link href="/about" className="hover:opacity-80 transition-opacity">サイトについて</Link>
-              <Link href="/contact" className="hover:opacity-80 transition-opacity">お問い合わせ</Link>
+            <nav className="flex items-center gap-6 text-sm text-white/80">
+              <Link href="/" className="hover:text-white transition-colors">ニュース</Link>
+              <Link href="/about" className="hover:text-white transition-colors">サイトについて</Link>
+              <Link href="/contact" className="hover:text-white transition-colors">お問い合わせ</Link>
             </nav>
           </div>
         </header>
 
         {/* カテゴリーバー */}
-        <div className="bg-white border-b border-gray-200">
+        <div className="border-b" style={{ backgroundColor: 'var(--cat-bar-bg)', borderColor: 'var(--border)' }}>
           <div className="max-w-6xl mx-auto px-4 h-10 flex items-center gap-6 text-sm overflow-x-auto">
             {siteConfig.categories.map(cat => (
               <Link
                 key={cat.slug}
                 href={`/category/${cat.slug}`}
-                className="text-gray-600 hover:text-gray-900 whitespace-nowrap transition-colors"
+                className="whitespace-nowrap transition-colors hover:opacity-100 opacity-70"
+                style={{ color: 'var(--text-primary)' }}
               >
                 {cat.name}
               </Link>
@@ -64,22 +81,22 @@ export default function RootLayout({
           {children}
         </div>
 
-        <footer className="text-white mt-12" style={{ backgroundColor: siteConfig.headerBg }}>
+        <footer className="text-white mt-12" style={{ backgroundColor: 'var(--header-bg)' }}>
           <div className="max-w-6xl mx-auto px-4 py-8">
             <div className="flex flex-col md:flex-row justify-between items-start gap-6">
               <div>
-                <p className="font-bold text-lg mb-2">
-                  <span style={{ color: siteConfig.accentColor }}>{siteConfig.siteNamePrefix}</span>
-                  {siteConfig.siteNameSuffix}
+                <p className="font-bold text-lg mb-1">
+                  <span style={{ color: 'var(--accent)' }}>{siteConfig.siteNamePrefix}</span>
+                  <span>{siteConfig.siteNameSuffix}</span>
                 </p>
-                <p className="text-sm text-gray-400">{siteConfig.tagline}</p>
+                <p className="text-sm text-white/50 max-w-xs">{siteConfig.tagline}</p>
               </div>
-              <div className="flex gap-6 text-sm text-gray-400">
+              <div className="flex gap-6 text-sm text-white/50">
                 <Link href="/contact" className="hover:text-white transition-colors">お問い合わせ</Link>
                 <Link href="/privacy" className="hover:text-white transition-colors">プライバシーポリシー</Link>
               </div>
             </div>
-            <div className="mt-6 pt-6 border-t border-gray-700 text-sm text-gray-500 text-center">
+            <div className="mt-6 pt-6 border-t border-white/10 text-sm text-white/30 text-center">
               © 2026 {siteConfig.siteName}
             </div>
           </div>

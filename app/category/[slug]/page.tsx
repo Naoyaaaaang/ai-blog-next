@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getPostsBySource, SLUG_TO_SOURCE, SOURCE_SLUGS } from '@/lib/posts'
+import { siteConfig } from '@/lib/site-config'
 import { PostCard } from '@/components/PostCard'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const source = SLUG_TO_SOURCE[slug]
   if (!source) return {}
-  return { title: `${source}のニュース | AIニュース最前線` }
+  return { title: `${source}のニュース | ${siteConfig.siteName}` }
 }
 
 export default async function CategoryPage({ params }: Props) {
@@ -27,13 +28,13 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <main className="max-w-6xl mx-auto px-4 py-8">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-1 h-6 bg-[#3BB8D4] rounded"></div>
-        <h2 className="text-lg font-bold text-gray-800">{source} のニュース</h2>
-        <span className="text-sm text-gray-400">（{posts.length}件）</span>
+        <div className="w-1 h-6 rounded" style={{ backgroundColor: 'var(--accent)' }}></div>
+        <h2 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>{source} のニュース</h2>
+        <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>（{posts.length}件）</span>
       </div>
 
       {posts.length === 0 ? (
-        <div className="bg-white rounded-lg p-8 text-center text-gray-400 text-sm">
+        <div className="rounded-lg p-8 text-center text-sm" style={{ backgroundColor: 'var(--card-bg)', color: 'var(--text-secondary)' }}>
           まだ記事がありません
         </div>
       ) : (
@@ -45,7 +46,13 @@ export default async function CategoryPage({ params }: Props) {
       )}
 
       <div className="mt-8">
-        <Link href="/" className="text-sm text-gray-400 hover:text-[#3BB8D4] transition-colors">← トップに戻る</Link>
+        <Link
+          href="/"
+          className="text-sm transition-opacity hover:opacity-60"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          ← トップに戻る
+        </Link>
       </div>
     </main>
   )

@@ -1,15 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --accent: #3BB8D4;
-  --navy: #253947;
+  --accent: #0062FF;
+  --accent-hover: #0048CC;
+  --header-bg: #040E1A;
+  --bg: #EEF2F7;
+  --card-bg: #FFFFFF;
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --border: #DDE4ED;
+  --tag-bg: #EBF3FF;
+  --tag-text: #0062FF;
+  --cat-bar-bg: #FFFFFF;
+  --sidebar-header-bg: #040E1A;
 }
 
 body {
-  background: #f4f6f8;
-  color: var(--foreground);
+  background-color: var(--bg);
+  color: var(--text-primary);
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, Arial, sans-serif;
 }
 
@@ -25,4 +33,87 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* ========== Per-site card styles ========== */
+
+/* ai-news: left accent border */
+.site-ai-news .post-card {
+  border-left: 3px solid var(--accent);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.site-ai-news .post-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 98, 255, 0.15);
+}
+
+/* crypto-news: neon glow border */
+.site-crypto-news .post-card {
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.site-crypto-news .post-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.35);
+}
+.site-crypto-news .sidebar-widget {
+  border: 1px solid rgba(255, 107, 0, 0.2);
+}
+.site-crypto-news .hover-item:hover {
+  background-color: rgba(255, 107, 0, 0.08) !important;
+}
+
+/* nisa-blog: gold top border + warm shadow */
+.site-nisa-blog .post-card {
+  border-top: 3px solid var(--accent);
+  transition: box-shadow 0.2s;
+}
+.site-nisa-blog .post-card:hover {
+  box-shadow: 0 6px 24px rgba(184, 134, 11, 0.2);
+}
+
+/* ai-image: magenta glow */
+.site-ai-image .post-card {
+  border: 1px solid rgba(255, 0, 170, 0.2);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.site-ai-image .post-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 28px rgba(255, 0, 170, 0.45);
+}
+.site-ai-image .sidebar-widget {
+  border: 1px solid rgba(255, 0, 170, 0.2);
+}
+.site-ai-image .hover-item:hover {
+  background-color: rgba(255, 0, 170, 0.08) !important;
+}
+
+/* overseas-tools: coral top border */
+.site-overseas-tools .post-card {
+  border-top: 4px solid var(--accent);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+.site-overseas-tools .post-card:hover {
+  box-shadow: 0 8px 28px rgba(230, 57, 70, 0.18);
+  transform: translateY(-2px);
+}
+
+/* ========== Article body prose ========== */
+.article-body h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--accent);
+  color: var(--text-primary);
+}
+.article-body p {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  font-size: 0.9rem;
+}
+.article-body a {
+  color: var(--accent);
+  text-decoration: underline;
 }
