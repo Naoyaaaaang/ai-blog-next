@@ -1,0 +1,14 @@
+{
+  "slug": "20260424-1777004120381",
+  "title": "Google、AI エージェント時代向けの専用TPU2種類を正式発表",
+  "content": "<h2>Google、AI時代向け次世代TPU「TPU 8T」「TPU 8i」を正式発表</h2>\n\n<p>Googleは、独自開発の人工知能向けプロセッサ「TPU（Tensor Processing Unit）」の第8世代として、2つの特化型チップを発表した。エージェント型AI（自律的に動作するAI）の時代を見据えた設計となっており、両チップともGoogle Cloudを通じて提供される予定だ。</p>\n\n<p>発表されたのは「TPU 8T」と「TPU 8i」の2モデル。TPU 8TはトランスフォーマーモデルやLLM（大規模言語モデル）など、推論・学習タスクに最適化された汎用型チップとして位置づけられている。一方、TPU 8iはインフラストラクチャに特化した設計で、大規模なマルチモーダルモデル処理やRAG（検索拡張生成）といった複合的なAI処理に対応する。Googleは両チップの処理性能について、前世代比で数倍の推論速度向上を実現したとしている。</p>\n\n<p>エージェント型AIは、複数の外部ツールやAPI連携を通じて自動的にタスク実行を進めるタイプのAI。今後の企業DX推進やAIアシスタントの発展を背景に、大手テック企業間で対応チップ開発の競争が加速している。Microsoftが自社AI向けカスタムチップ「Cobalt」や「Maia」を展開するなど、OpenAIなど主要なAIモデル開発企業も専用チップへの依存度を高めている。Googleが第8世代で複数の特化型チップを同時投入する戦略は、市場の多様なニーズに対応する狙いが明確だ。</p>\n\n<p>両チップはGoogle Cloud Nextで詳細が公開予定で、クラウドサービス利用企業への段階的提供が進められる見込み。AI インフラストラクチャの市場競争が一層激化する中、Googleの次世代チップ戦略の実装状況と顧客獲得動向に注目が集まりそうだ。</p>\n\n<p><a href=\"https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/\">参照元：Google AI Blog - We're launching two specialized TPUs for the agentic era.</a></p>",
+  "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Were_launching_two_TPUs_social.max-600x600.format-webp.webp",
+  "source": "Google AI",
+  "sourceUrl": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/",
+  "publishedAt": "2026-04-24T04:15:20.381Z",
+  "tags": [
+    "AI",
+    "テクノロジー",
+    "Google AI"
+  ]
+}
