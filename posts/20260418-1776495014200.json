@@ -1,0 +1,14 @@
+{
+  "slug": "20260418-1776495014200",
+  "title": "Claude Codeの月額料金が判明、無料代替案Gooseが話題に",
+  "content": "<h2>Claude Codeの高額料金に反発、Block傘下のGooseが無料オルタナティブとして急速に普及</h2>\n\n<p>Anthropicが提供するAIコード生成ツール「Claude Code」が、月額20～200ドルの価格設定に対する開発者からの反発を招いている。一方、ブロック（旧Square）が開発したオープンソースプロジェクト「Goose」が、ほぼ同等の機能を完全無料で提供することで、急速に注目を集めている。</p>\n\n<p>Claude Codeは、コードの自動生成・デバッグ・デプロイメントが可能なターミナルベースのAIエージェントだが、Proプラン（月額20ドル）では5時間ごとに10～40回のプロンプト制限、Max（月額200ドル）では週単位のトークン制限が設けられている。Anthropicが2025年7月に導入した新しいレート制限により、実際には1セッションあたり44,000～220,000トークン程度に制限されており、集約的なコード作業を行う開発者からは「30分で上限に達する」「実務には不向き」といった批判の声が上がっている。</p>\n\n<p>これに対してGooseは、ユーザーのローカルマシン上で完全に動作するオンマシンAIエージェントとして、GitHubで26,100以上のスター獲得、362人の貢献者、102回のリリースを記録。Ollamaなどのツールを用いてオープンソース言語モデルをローカル実行させることで、サブスクリプション料金ゼロ、レート制限なし、オフライン対応を実現している。開発エンジニアのParth Sareen氏は「飛行機の中でも動作する」と実装のメリットを強調した。</p>\n\n<p>AIコーディングツール市場の競争環境は大きく変わろうとしている。Meta傘下のLlama、AlibabaのQwen、GoogleのGemmaといったオープンソースモデルが急速に性能を向上させており、モデル品質の面でのAnthropicの優位性が蝕まれる可能性が出現している。Cursor（月額20～200ドル）やGitHub Copilotといった既存サービスも同様の価格競争圧力に直面する見込みだ。</p>\n\n<p>Gooseは32GBのRAM推奨など技術的なセットアップが必要で、複雑なタスクではClaude 4.5 Opusに劣る側面も残る。しかし、プライバシー、自律性、コスト効率を重視する開発者にとって、月額200ドル相当の機能を無料で提供するツールの登場は、業界の勢力図を大きく塗り替える可能性を秘めている。オープンソースAIインフラの成熟と開発者のニーズの変化が、今後のAIツール市場にどう影響するのか注視が集まっている。</p>\n\n<p><strong>参照元:</strong> <a href=\"https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free\">VentureBeat - Claude Code costs up to $200 a month. Goose does the same thing for free.</a></p>",
+  "imageUrl": "https://images.ctfassets.net/jdtwqhzvc2n1/1U9H8GLIqoGqKpitVfgw3T/ba56292f99409eca709dac0b176ec245/nuneybits_Vector_art_of_white_goose_silhouette_flying_through_c_8100d5a7-9e36-4ed6-a188-016470e1d0e1.webp?w=300&q=30",
+  "source": "VentureBeat AI",
+  "sourceUrl": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+  "publishedAt": "2026-04-18T06:50:14.200Z",
+  "tags": [
+    "AI",
+    "テクノロジー",
+    "VentureBeat AI"
+  ]
+}
