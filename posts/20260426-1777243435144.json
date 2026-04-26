@@ -2,7 +2,7 @@
   "slug": "20260426-1777243435144",
   "title": "Sentence Transformersで複数モダリティ対応モデル開発の全貌が判明",
   "content": "<h2>Hugging Face、マルチモーダル埋め込みモデルの学習・微調整機能を正式発表</h2>\n\n<p>オープンソースAIコミュニティの中核を担うHugging Faceは、Sentence Transformersプラットフォームにおいて、マルチモーダル埋め込みモデルおよびリランカーモデルの学習・微調整機能を新たに提供することが明らかになった。この拡張により、テキストと画像を統合的に処理できるAIモデルの開発がより容易になることが確認された。</p>\n\n<p>従来、埋め込みモデル（テキストや画像を数値ベクトルに変換するモデル）の学習には高度な技術知識と多大なコンピュータリソースが必要であった。今回の機能追加により、データサイエンティストは既存のSentence Transformersフレームワークを活用して、自社データセットに最適化したマルチモーダルモデルをカスタマイズできるようになる。特にRAG（検索拡張生成）やクロスモーダル検索、画像テキスト検索など、複数の情報形式を扱う応用場面での活躍が期待されている。</p>\n\n<p>この発表は、生成AI市場における検索・検索最適化技術の重要性が急速に高まる中での施策と位置づけられる。言語モデルの精度向上に伴い、関連情報を正確に取得できるリランカー（最適な結果を順序付けするモデル）の需要も飛躍的に増加している。これにより、OpenAIやAnthropic、Google DeepMindといった競合各社も同様の学習基盤の拡充を急いでおり、業界全体として埋め込み技術の民主化と高度化が同時進行する構図が形成されている。</p>\n\n<p>Hugging Faceの取り組みは、特に中堅企業やスタートアップがエンタープライズレベルのAIシステムを構築するための障壁を大きく低減する点で業界への波及効果が大きいと分析される。今後、このマルチモーダル学習機能がどの程度実装され、実務レベルでどれほどの精度向上をもたらすのかという点に、市場関係者の注目が集まりそうだ。</p>\n\n<p><strong>参照元：</strong><a href=\"https://huggingface.co/blog/train-multimodal-sentence-transformers\" target=\"_blank\">Hugging Face Blog - Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers</a></p>",
-  "imageUrl": null,
+  "imageUrl": "https://huggingface.co/blog/assets/train-sentence-transformers/st-hf-thumbnail.png",
   "source": "Hugging Face",
   "sourceUrl": "https://huggingface.co/blog/train-multimodal-sentence-transformers",
   "publishedAt": "2026-04-26T22:43:55.144Z",
