@@ -5,6 +5,7 @@ const Parser = require('rss-parser')
 const fs = require('fs')
 const path = require('path')
 const siteConfigs = require('./site-configs')
+const { fetchUnsplashUrl } = require('./image-helper')
 
 const SITE_ID = process.env.SITE_ID || 'ai-news'
 const siteConfig = siteConfigs[SITE_ID]
@@ -67,10 +68,11 @@ function stripCodeFences(text) {
 
 async function fetchRecentItems() {
   const allItems = []
+  const keywords = siteConfig.filterKeywords || []
   for (const source of RSS_SOURCES) {
     try {
       const feed = await parser.parseURL(source.url)
-      const recent = feed.items.slice(0, 5).map(item => ({
+      const recent = feed.items.slice(0, 10).map(item => ({
         title: item.title,
         summary: item.contentSnippet || item.content || '',
         link: item.link,
@@ -82,8 +84,18 @@ async function fetchRecentItems() {
       console.log(`⚠ ${source.name} 取得失敗: ${e.message}`)
     }
   }
-  allItems.sort(() => Math.random() - 0.5)
-  return allItems.slice(0, ARTICLES_PER_RUN)
+
+  const filtered = keywords.length > 0
+    ? allItems.filter(item => keywords.some(kw => item.title.includes(kw) || item.summary.includes(kw)))
+    : allItems
+
+  const pool = filtered.length >= ARTICLES_PER_RUN ? filtered : allItems
+  if (filtered.length < ARTICLES_PER_RUN) {
+    console.log(`⚠ キーワードフィルター後 ${filtered.length}件のみ（フィルターなしで代替）`)
+  }
+
+  pool.sort(() => Math.random() - 0.5)
+  return pool.slice(0, ARTICLES_PER_RUN)
 }
 
 async function generateArticle(item) {
@@ -127,15 +139,17 @@ async function main() {
     try {
       const { title, content } = await generateArticle(item)
       const slug = slugify(title)
+      const tags = siteConfig.tags(item.source)
+      const imageUrl = item.imageUrl || await fetchUnsplashUrl(tags, SITE_ID, slug)
       const post = {
         slug,
         title,
         content,
-        imageUrl: item.imageUrl || null,
+        imageUrl,
         source: item.source,
         sourceUrl: item.link,
         publishedAt: new Date().toISOString(),
-        tags: siteConfig.tags(item.source),
+        tags,
       }
 
       fs.writeFileSync(
@@ -143,7 +157,7 @@ async function main() {
         JSON.stringify(post, null, 2),
         'utf-8'
       )
-      console.log(`  ✅ 保存: ${slug}.json (画像: ${item.imageUrl ? 'あり' : 'なし'})`)
+      console.log(`  ✅ 保存: ${slug}.json (画像: ${imageUrl ? 'あり' : 'なし'})`)
       await new Promise(r => setTimeout(r, 1000))
     } catch (e) {
       console.error(`  ❌ エラー: ${e.message}`)
