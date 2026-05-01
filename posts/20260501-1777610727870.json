@@ -1,0 +1,14 @@
+{
+  "slug": "20260501-1777610727870",
+  "title": "OpenAIがMythosの制限でAnthropicをけなした後、Cyberへのアクセスも制限に衝撃",
+  "content": "<h2>OpenAIが自社サイバーセキュリティツールの提供を制限へ、Anthropicへの批判から一転</h2>\n\n<p>OpenAIは4月30日、同社の最新サイバーセキュリティ検査ツール「GPT-5.5 Cyber」の提供開始を正式発表した。ただし当初段階では「重要インフラを防御する専門家に限定」する方針を示しており、汎用アクセスは段階的に拡大する予定だという。</p>\n\n<p>この決定は業界内で大きな注目を集めている。というのも、OpenAIは過去にAnthropicが開発した大規模言語モデル「Mythos」のアクセス制限に対して、批判的なコメントを発表していたからだ。その同じOpenAIが、今回は自社製品で同様の限定的配布戦略を採用することになり、業界内では「ダブルスタンダード」ではないかという指摘が上がっている。</p>\n\n<h2>サイバー防御の専門家向けに段階的リリース</h2>\n\n<p>GPT-5.5 Cyberは、企業のサイバー脆弱性検査と侵入テストの自動化に特化したツールだ。最新のトランスフォーマーアーキテクチャを採用し、従来の手法よりも30%以上高速に脅威検知を実行できるとされている。ただし悪用のリスクを考慮し、初期段階では政府機関や金融機関、重要インフラ事業者など「認定された防御専門家」のみへの提供に限定する運びとなった。OpenAIはこの限定期間を「最低3カ月間」と想定しているとのこと。</p>\n\n<p>業界アナリストは、このような慎重な配布戦略がサイバーセキュリティ分野で一般的になりつつあると指摘する。生成AI（ジェネレーティブAI）による攻撃ツールの悪用を防ぐため、Googleなどの大手テック企業も同様の段階的リリース方式を採用しており、これが業界標準化する可能性も高いという見方が広がっている。</p>\n\n<h2>競合企業の対応に注目</h2>\n\n<p>このOpenAIの決定により、同じく高度なセキュリティツールを開発中とされるAnthropicやMistral AIなど競合企業がどのような提供戦略を採るのか、業界の関心が集中することになりそうだ。OpenAIのGPT-5.5 Cyberの今後の展開動向に注目が集まっている。</p>\n\n<p><a href=\"https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/\" target=\"_blank\">参照元：TechCrunch - After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber, too</a></p>",
+  "imageUrl": "https://loremflickr.com/1200/630/technology?lock=7870",
+  "source": "TechCrunch AI",
+  "sourceUrl": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/",
+  "publishedAt": "2026-05-01T04:45:27.870Z",
+  "tags": [
+    "AI",
+    "テクノロジー",
+    "TechCrunch AI"
+  ]
+}
