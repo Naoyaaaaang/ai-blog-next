@@ -1,0 +1,14 @@
+{
+  "slug": "20260503-1777783031169",
+  "title": "Googleが「エージェント時代」向けの新型TPU2種類を正式発表",
+  "content": "<h2>Google、エージェント時代向けの専用TPU2種を正式発表</h2>\n\n<p>Googleは、次世代AI時代に対応する専用チップを搭載した第8世代TPU「TPU 8T」と「TPU 8i」の提供を正式に発表した。同社のAIインフラストラクチャ戦略が大きく転換され、従来の汎用チップから特化型チップへシフトすることが明らかになった。これらのTPUは、AI エージェント（自律的に動作するAIシステム）の大規模運用を想定して設計されている。</p>\n\n<p>TPU 8Tは推論（inference）タスクに特化した仕様で、複数のAIエージェントが同時に動作する環境での処理速度を最大化する。一方、TPU 8iは推論と訓練のバランス型設計となっており、エージェント型AIアプリケーションの開発・運用サイクル全体に対応できる。Googleによれば、これらのチップは従来のTPUと比較して、エージェント型ワークロードにおいて数倍のスループットを実現し、レイテンシー削減も大幅に改善されたという。</p>\n\n<h2>エージェント時代の到来、業界全体に波紋</h2>\n\n<p>TPU 8T・8iの発表は、AI産業全体に大きな影響を与えることが確認された。複数のAIエージェントが同時にRAG（検索拡張生成）やツール連携タスクを実行する環境では、専用チップの効率性が求められており、Googleの戦略的な対応は業界標準となる可能性が高い。競合のOpenAIやAnthropic、国内ではソニーグループなども、エージェント型AIの開発を加速させており、この領域でのハードウェア競争が激化することは必至だ。また、クラウドプロバイダー各社も同様の専用チップ開発を急ぐと予想される。</p>\n\n<h2>Google Cloudの競争力強化へ</h2>\n\n<p>Googleは2025年中のクラウド提供開始を予定しており、Google Cloudプラットフォーム上でTPU 8T・8iへのアクセスを有料提供する方針。これにより、AI企業や研究機関がエージェント型アプリケーション開発に必要な高性能インフラへ容易にアクセスできる環境が整備されることになる。同社のAIインフラ戦略の成熟度が高まる中、Googleが提供するTPUスイートの進化に注目が集まりそうだ。</p>\n\n<p><a href=\"https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/\" target=\"_blank\">参照元：Google AI Blog</a></p>",
+  "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Were_launching_two_TPUs_social.max-600x600.format-webp.webp",
+  "source": "Google AI",
+  "sourceUrl": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/",
+  "publishedAt": "2026-05-03T04:37:11.170Z",
+  "tags": [
+    "AI",
+    "テクノロジー",
+    "Google AI"
+  ]
+}
