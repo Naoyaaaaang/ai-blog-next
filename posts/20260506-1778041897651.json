@@ -1,0 +1,14 @@
+{
+  "slug": "20260506-1778041897651",
+  "title": "Claude Codeが月200ドルの課金に、Gooseが無料で対抗",
+  "content": "<h2>月200ドルのClaude Codeに対抗、BlockがGooseを無料公開——AIコーディング市場に激震</h2>\n\n<p>AIコーディングツール市場に異変が起きている。AnthropicのClaude Codeは月額20～200ドルの料金設定で開発者の反発を招いているが、決済企業Blockが開発したオープンソースプロジェクト「Goose」がGitHub上で26,100以上のスターを獲得し、急速に存在感を高めている。注目すべきは、Gooseがほぼ同等の機能を完全無料で提供している点だ。</p>\n\n<p>Claude Codeの価格体系が問題視されている背景には、実質的な利用制限の厳しさがある。Anthropicが昨年7月に導入した新たなレート制限では、月額20ドルのProプランユーザーは週間40～80時間のSonnet 4利用に制限される。「時間」という表示だが、実際にはトークンベースの制限であり、独立系分析では月額200ドルのMaxプランでもセッションあたり約220,000トークンに相当するという。この曖昧さに対し、「実際に何が得られるのか理解不可能」といった開発者からの批判がRedditやフォーラムで相次いでいる。</p>\n\n<h2>ローカルで動作、プライバシー保護——Gooseが実現した「AI民主化」</h2>\n\n<p>一方、Gooseはまったく異なるアプローチを採用している。Anthropicのサーバーにクエリを送信するClaude Codeと異なり、Gooseはユーザーのローカルマシン上で完全に動作する。開発者はOllama等のツールを使用してオープンソース言語モデルをダウンロードして自身のハードウェアで実行できるため、サブスクリプション料金も使用制限も存在しない。従来のコード提案にとどまらず、ファイル作成、テスト実行、GitHub連携といった自律的なタスク実行が可能だ。</p>\n\n<p>セットアップは比較的シンプルだ。Ollamaをインストール後、「ollama run qwen2.5」でモデルをダウンロード。その後Gooseを設定して同期させるだけで稼働する。ただし、Meta傘下のLlama、AlibabaのQwen、GoogleのGemmaといった選択肢があるものの、複雑なタスクではAnthropicのClaude Opus相当の性能に今なお及ばない。また32GB RAM以上が推奨される点も、すべての開発者に対応可能とは言い難い。</p>\n\n<h2>業界地図が変わる分岐点——モデル品質の「陳腐化」が加速</h2>\n\n<p>この競争構図は市場全体に波紋を広げている。Cursor、GitHub Copilot等の競合ツールも月額20～200ドルの料金体系を採用しているが、オープンソース言語モデルの急速な進化がプロプライエタリモデルの優位性を脅かし始めている。MoonshotのKimi K2やz.aiのGLM 4.5がClaude Sonnet 4レベルのベンチマーク性能を無料で提供するようになれば、単なるモデル品質ではもはや premium pricing を正当化できなくなる可能性は高い。</p>\n\n<p>Gooseは技術的な熟成度や使いやすさではClaude Codeに劣るかもしれない。だが、GitHubで102回のリリースを重ね、362人の貢献者が参加する開発体制は、単なるオープンソースプロジェクトの域を超えている。月額200ドルの商用製品に対抗する無料の選択肢が存在する事実そのものが、AI開発基盤の「民主化」が既に現実段階に入ったことを示唆している。開発者が真の意味で自律性を取り戻す時代の到来が、この競争を通じて可視化されているのだ。</p>\n\n<p style=\"margin-top: 2em; font-size: 0.9em; color: #666;\">\n<strong>参照元：</strong> \n<a href=\"https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free\" target=\"_blank\">\nVentureBeat「Claude Code costs up to $200 a month. Goose does the same thing for free.」\n</a>\n</p>",
+  "imageUrl": "https://images.ctfassets.net/jdtwqhzvc2n1/1U9H8GLIqoGqKpitVfgw3T/ba56292f99409eca709dac0b176ec245/nuneybits_Vector_art_of_white_goose_silhouette_flying_through_c_8100d5a7-9e36-4ed6-a188-016470e1d0e1.webp?w=300&q=30",
+  "source": "VentureBeat AI",
+  "sourceUrl": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+  "publishedAt": "2026-05-06T04:31:37.651Z",
+  "tags": [
+    "AI",
+    "テクノロジー",
+    "VentureBeat AI"
+  ]
+}
