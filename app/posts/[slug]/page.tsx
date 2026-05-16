@@ -79,7 +79,7 @@ export default async function PostPage({ params }: Props) {
 
               {/* 本文 */}
               <div
-                className="article-body text-sm leading-relaxed max-w-none"
+                className="article-body max-w-none"
                 dangerouslySetInnerHTML={{ __html: post!.content }}
               />
             </div>

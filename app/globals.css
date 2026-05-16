@@ -142,20 +142,57 @@ body {
 }
 
 /* ========== 記事本文 ========== */
+.article-body {
+  font-size: 1rem;
+  line-height: 2;
+}
 .article-body h2 {
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
   padding-left: 0.75rem;
   border-left: 4px solid var(--accent);
   color: var(--text-primary);
 }
+.article-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
 .article-body p {
   color: var(--text-primary);
-  margin-bottom: 1rem;
-  line-height: 1.8;
-  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 2;
+  font-size: 1rem;
+}
+.article-body ul,
+.article-body ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+.article-body li {
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 2.2;
+}
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.75rem;
+  font-size: 0.95rem;
+}
+.article-body th,
+.article-body td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.article-body div[style*="background"] {
+  margin-bottom: 1.5rem;
+  line-height: 2;
 }
 .article-body a {
   color: var(--accent);
